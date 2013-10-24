@@ -1,11 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Express 2012 for Web
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.Accounts.Site.Tests", "WS.Accounts.Site.Tests\WS.Accounts.Site.Tests.csproj", "{2922DABC-E16B-4C03-BFB5-BA7243F7CCED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.Accounts.Site", "WS.Accounts.Site\WS.Accounts.Site.csproj", "{91217DED-A6AF-4718-A6F8-D5A7B6A6AEB5}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "WS.Accounts.Database", "WS.Accounts.Database\WS.Accounts.Database.sqlproj", "{D06EFA89-62D2-47A0-90FE-AE722FAB46A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.Accounts.Entities", "WS.Accounts.Entities\WS.Accounts.Entities.csproj", "{FF0EA1C9-F43A-4DE5-811E-298CFC97415D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.Accounts.DataAccess", "WS.Accounts.DataAccess\WS.Accounts.DataAccess.csproj", "{96D46020-AA1D-40A9-89B5-70C57A1B48E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E24D3296-3FB2-4E09-9819-A3F243E41B2D}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,8 +38,19 @@ Global
 		{D06EFA89-62D2-47A0-90FE-AE722FAB46A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D06EFA89-62D2-47A0-90FE-AE722FAB46A2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D06EFA89-62D2-47A0-90FE-AE722FAB46A2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FF0EA1C9-F43A-4DE5-811E-298CFC97415D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF0EA1C9-F43A-4DE5-811E-298CFC97415D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF0EA1C9-F43A-4DE5-811E-298CFC97415D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF0EA1C9-F43A-4DE5-811E-298CFC97415D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96D46020-AA1D-40A9-89B5-70C57A1B48E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D46020-AA1D-40A9-89B5-70C57A1B48E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D46020-AA1D-40A9-89B5-70C57A1B48E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D46020-AA1D-40A9-89B5-70C57A1B48E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
 	EndGlobalSection
 EndGlobal

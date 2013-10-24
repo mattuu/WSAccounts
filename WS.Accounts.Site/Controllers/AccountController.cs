@@ -1,8 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
-using WS.Accounts.Site.Models.DataAccess;
-using WS.Accounts.Site.Models.DataStore;
-using WS.Accounts.Site.Models.Entities;
+using WS.Accounts.DataAccess;
+using WS.Accounts.Entities;
 
 namespace WS.Accounts.Site.Controllers
 {
@@ -11,9 +10,9 @@ namespace WS.Accounts.Site.Controllers
         private IRepository<Account> _repository;
         //
         // GET: /Account/
-        public AccountController()
+        public AccountController(IRepository<Account> repository)
         {
-            _repository = new DbContextRepository<Account>(new DatabaseContext());
+            _repository = repository;
         }
 
         public ActionResult Index()
