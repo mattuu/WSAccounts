@@ -1,6 +1,7 @@
 ﻿using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using WS.Accounts.DataAccess;
@@ -17,7 +18,9 @@ namespace WS.Accounts.Site.Models
 
         private static IUnityContainer BuildUnityContainer()
         {
-            var container = new UnityContainer(); 
+            var container = new UnityContainer();
+
+            container.RegisterType<DbContext, AccountsContext>(new PerResolveLifetimeManager());
 
             container.RegisterType<IRepository<Account>, DbContextRepository<Account>>();
             container.RegisterType<IRepository<Transaction>, DbContextRepository<Transaction>>();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
@@ -14,6 +15,8 @@ namespace WS.Accounts.Site
         protected void Application_Start(object sender, EventArgs e)
         {
             Bootstrapper.Initialise();
+
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

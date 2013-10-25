@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using WS.Accounts.Entities;
 
-namespace WS.Accounts.DataAccess
+namespace WS.Accounts.DataAccess.Mappings
 {
     public class AccountMap : EntityTypeConfiguration<Account>
     {

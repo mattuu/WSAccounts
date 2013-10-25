@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WS.Accounts.DataAccess.Mappings;
 using WS.Accounts.Entities;
 
 namespace WS.Accounts.DataAccess
@@ -19,9 +20,12 @@ namespace WS.Accounts.DataAccess
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Configurations.Add(new AddressMap());
             modelBuilder.Configurations.Add(new AccountMap());
-            modelBuilder.Configurations.Add(new TransactionMap());
+            modelBuilder.Configurations.Add(new CompanyMap());
+            modelBuilder.Configurations.Add(new EmployeeMap());
             modelBuilder.Configurations.Add(new ProductMap());
+            modelBuilder.Configurations.Add(new TransactionMap());
         }
 
         public IDbSet<Transaction> Transactions { get; set; }
