@@ -18,6 +18,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E24D32
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.Accounts.Import", "WS.Accounts.Import\WS.Accounts.Import.csproj", "{0B385CB8-9FDD-4EAB-ADBA-1746BDA7C9E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spreadsheet", "Spreadsheet", "{15E74331-37AB-4610-AC8C-3CA9E8FBF0C2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Site", "Site", "{692E5D29-C7E8-499C-948C-5AD7C259BE97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WS.Accounts.Import.Tests", "WS.Accounts.Import.Tests\WS.Accounts.Import.Tests.csproj", "{BD3CB3CE-E6EB-4C90-8315-63E855B03EE3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,9 +54,23 @@ Global
 		{96D46020-AA1D-40A9-89B5-70C57A1B48E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96D46020-AA1D-40A9-89B5-70C57A1B48E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96D46020-AA1D-40A9-89B5-70C57A1B48E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B385CB8-9FDD-4EAB-ADBA-1746BDA7C9E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B385CB8-9FDD-4EAB-ADBA-1746BDA7C9E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B385CB8-9FDD-4EAB-ADBA-1746BDA7C9E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B385CB8-9FDD-4EAB-ADBA-1746BDA7C9E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD3CB3CE-E6EB-4C90-8315-63E855B03EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD3CB3CE-E6EB-4C90-8315-63E855B03EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD3CB3CE-E6EB-4C90-8315-63E855B03EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD3CB3CE-E6EB-4C90-8315-63E855B03EE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0B385CB8-9FDD-4EAB-ADBA-1746BDA7C9E8} = {15E74331-37AB-4610-AC8C-3CA9E8FBF0C2}
+		{BD3CB3CE-E6EB-4C90-8315-63E855B03EE3} = {15E74331-37AB-4610-AC8C-3CA9E8FBF0C2}
+		{91217DED-A6AF-4718-A6F8-D5A7B6A6AEB5} = {692E5D29-C7E8-499C-948C-5AD7C259BE97}
+		{2922DABC-E16B-4C03-BFB5-BA7243F7CCED} = {692E5D29-C7E8-499C-948C-5AD7C259BE97}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
