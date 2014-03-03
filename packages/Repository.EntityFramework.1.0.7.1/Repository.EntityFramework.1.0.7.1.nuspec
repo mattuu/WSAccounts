@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Repository.EntityFramework</id>
+    <version>1.0.7.1</version>
+    <title>Repository.EntityFramework</title>
+    <authors>Matthew Schrager</authors>
+    <owners>Matthew Schrager</owners>
+    <licenseUrl>https://github.com/matthewschrager/Repository#license</licenseUrl>
+    <projectUrl>https://github.com/matthewschrager/Repository</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An entity framework implementation of the generic repository pattern.</description>
+    <releaseNotes />
+    <copyright>Copyright Matthew Schrager 2013</copyright>
+    <language />
+    <tags>Repository EntityFramework</tags>
+    <dependencies>
+      <dependency id="Repository" />
+      <dependency id="EntityFramework" />
+      <dependency id="AutoMapper" version="2.2.1" />
+      <dependency id="NUnit" version="2.6.2" />
+    </dependencies>
+  </metadata>
+</package>
