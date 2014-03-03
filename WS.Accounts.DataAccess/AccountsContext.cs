@@ -11,6 +11,11 @@ namespace WS.Accounts.DataAccess
 {
     public class AccountsContext : DbContext
     {
+        public AccountsContext()
+            : this("WSAccounts")
+        {
+        }
+
         public AccountsContext(string connectionStringName)
             : base(connectionStringName)
         {

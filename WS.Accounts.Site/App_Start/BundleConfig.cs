@@ -22,8 +22,16 @@ namespace WS.Accounts.Site.App_Start
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/utils").Include(
+                "~/Scripts/breeze.min.js",
+                "~/Scripts/bootstrap.min.js",
+                "~/Scripts/knockout-3.0.0.js",
+                "~/Scripts/q.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Scripts/bootstrap"));
+
+            bundles.Add(new ScriptBundle("~/bundles/vm").Include("~/ViewModels/*.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 

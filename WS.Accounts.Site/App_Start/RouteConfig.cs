@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace WS.Accounts.Site.App_Start
+namespace WS.Accounts.Site
 {
     public class RouteConfig
     {
