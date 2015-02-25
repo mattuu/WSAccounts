@@ -23,19 +23,18 @@ namespace WS.Accounts.Site.App_Start
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/utils").Include(
-                "~/Scripts/breeze.min.js",
-                "~/Scripts/bootstrap.min.js",
-                "~/Scripts/knockout-3.0.0.js",
-                "~/Scripts/q.min.js"));
+                        "~/Scripts/bootstrap.js",
+                        "~/Scripts/angular.js",
+                        "~/Scripts/angular-route.js",
+                        "~/Scripts/angular-resource.js",
+                        "~/Scripts/angular-animate.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                        "~/Scripts/bootstrap"));
+            bundles.Add(new ScriptBundle("~/bundles/app").Include("~/ViewModels/*.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/vm").Include("~/ViewModels/*.js"));
-
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
-
-            bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                        "~/Content/site.css",
+                        "~/Content/bootstrap/bootstrap.css",
+                        "~/Content/bootstrap/bootstrap-theme.css",
                         "~/Content/themes/base/jquery.ui.core.css",
                         "~/Content/themes/base/jquery.ui.resizable.css",
                         "~/Content/themes/base/jquery.ui.selectable.css",
@@ -48,13 +47,6 @@ namespace WS.Accounts.Site.App_Start
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
-
-            // base bundles that come with MVC 4
-            var bootstrapBundle = new Bundle("~/bundles/bootstrap").Include(
-                "~/Content/bootstrap/bootstrap.css",
-                "~/Content/bootstrap/bootstrap-theme.css");
-            //bootstrapBundle.Transforms.Add(new CssMinify());
-            bundles.Add(bootstrapBundle);
         }
     }
 }

@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WS.Accounts.Entities
 {
-    public class Account
+    public class Account : EntityBase
     {
         public Account()
         {
@@ -15,6 +11,10 @@ namespace WS.Accounts.Entities
         }
 
         public int AccountId { get; set; }
+
+        public int CompanyId { get; set; }
+
+        public virtual Company Company { get; set; }
 
         public string Description { get; set; }
 

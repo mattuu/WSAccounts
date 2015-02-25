@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WS.Accounts.Entities
 {
-    public class Transaction
+    public class Transaction : EntityBase
     {
         public int TransactionId { get; set; }
 
@@ -20,8 +16,10 @@ namespace WS.Accounts.Entities
 
         public string Reference { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTime TransactionDateTime { get; set; }
 
         public decimal Amount { get; set; }
+
+        public string Comment { get; set; }
     }
 }

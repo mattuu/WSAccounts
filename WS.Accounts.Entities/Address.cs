@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WS.Accounts.Entities
+﻿namespace WS.Accounts.Entities
 {
-    public class Address
+    public class Address : EntityBase
     {
         public int AddressId { get; set; }
 
@@ -18,7 +12,9 @@ namespace WS.Accounts.Entities
 
         public string StreetName { get; set; }
 
-        public string AdditionalAddressLine { get; set; }
+        public string AddressLine1 { get; set; }
+
+        public string AddressLine2 { get; set; }
 
         public string Town { get; set; }
 

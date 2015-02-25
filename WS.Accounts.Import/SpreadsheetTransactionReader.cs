@@ -21,7 +21,7 @@ namespace WS.Accounts.Import
             // Getting the complete workbook... 
             var workbook = new HSSFWorkbook(inputStream);
 
-            ReadTransactionsFromPaid(workbook);
+            ReadTransactionsFromPaidSheet(workbook);
             
         }
 
@@ -42,13 +42,13 @@ namespace WS.Accounts.Import
 
         private void ReadAccountsFromPaid(ISheet sheet)
         {
-            var i = 9; // row index..
-            var j = 3; // column index..
+            const int rowIndex = 9;
+            const int colIndex = 3;
             var factory = new AccountFactory();
 
-            var cells = sheet.GetRow(i).Cells;
+            var cells = sheet.GetRow(rowIndex).Cells;
 
-            var index = j;
+            var index = colIndex;
             while (cells[index] != null)
             {
                 var name = cells[index].StringCellValue;
@@ -56,7 +56,7 @@ namespace WS.Accounts.Import
             }
         }
 
-        private void ReadTransactionsFromPaid(IWorkbook workbook)
+        private void ReadTransactionsFromPaidSheet(IWorkbook workbook)
         {
             var sheet = workbook.GetSheet(SheetNames.Paid);
             ReadAccountsFromPaid(sheet);
@@ -71,6 +71,11 @@ namespace WS.Accounts.Import
             }
         }
 
+        public void ReadTransactionsFromReceivedSheet(ISheet receivedSheet)
+        {
+            
+        }
+
         //private void ReadSpreadsheet(Stream inputStream)
         //{
         //    var bw = new BackgroundWorker();
@@ -80,4 +85,46 @@ namespace WS.Accounts.Import
 
     }
 
+    public abstract class SheetTransactionReader
+    {
+        private readonly IWorkbook _workbook;
+        private readonly string _sheetName;
+
+        protected SheetTransactionReader(IWorkbook workbook, string sheetName)
+        {
+            if (workbook == null) throw new ArgumentNullException("workbook");
+            if (sheetName == null) throw new ArgumentNullException("sheetName");
+            _workbook = workbook;
+            _sheetName = sheetName;
+        }
+
+        private ISheet GetSheet()
+        {
+            return _workbook.GetSheet(_sheetName);
+        }
+
+        public void Read()
+        {
+            var sheet = GetSheet();
+
+            for (var i = 0; i <= sheet.LastRowNum; i++)
+            {
+                var row = sheet.GetRow(i);
+                if (row != null) //null is when the row only contains empty cells 
+                {
+                    var paidRow = PaidRow.Create(row);
+                }
+            }
+        }
+    }
+
+    public class ReceivedSheetTransactionReader : SheetTransactionReader
+    {
+        
+    }
+
+    public class PaidSheetTransactionReader : SheetTransactionReader
+    {
+        
+    }
 }
