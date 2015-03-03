@@ -49,7 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountsContext.cs" />
+    <Compile Include="DbContextRepository.cs" />
+    <Compile Include="IAccountStore.cs" />
+    <Compile Include="InMemoryRepository.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="IStore.cs" />
     <Compile Include="Mappings\AccountMap.cs" />
     <Compile Include="Mappings\AddressMap.cs" />
     <Compile Include="Mappings\CompanyMap.cs" />

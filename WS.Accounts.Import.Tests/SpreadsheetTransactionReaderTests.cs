@@ -1,6 +1,7 @@
-﻿using System;
+﻿using System.IO;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
+using WS.Accounts.DataAccess;
 
 namespace WS.Accounts.Import.Tests
 {
@@ -10,12 +11,24 @@ namespace WS.Accounts.Import.Tests
         [TestMethod]
         public void ReadTest()
         {
-            var reader = new SpreadsheetTransactionReader();
+            const string path = @"C:\temp\stuff.xls";
 
-            var file = File.Open(@"C:\temp\accounts.xls", FileMode.Open);
-            reader.Import(file);
+            Assert.IsTrue(File.Exists(path));
 
+            IAccountStore accountStore = new InMemoryAccountStore();
 
+            var accountFactory = new PaidRowAccountFactory(accountStore, 1);
+
+            SpreadsheetTransactionReader reader;
+            using (var file = File.Open(path, FileMode.Open))
+            {
+                reader = new SpreadsheetTransactionReader(file);
+                reader.AddTransactionReader(new PaidSheetTransactionReader(accountFactory));
+                reader.Import();
+            }
+
+            Assert.IsNotNull(reader);
+            Assert.AreEqual(2, accountStore.GetAll().Count());
         }
     }
 }

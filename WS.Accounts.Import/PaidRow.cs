@@ -1,20 +1,11 @@
-﻿using NPOI.SS.UserModel;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using NPOI.SS.UserModel;
 
 namespace WS.Accounts.Import
 {
     public class PaidRow : IPaidRow
     {
-        public static IPaidRow Create(IRow data)
-        {
-            return new PaidRow(data);
-        }
-
         private PaidRow(IRow rowData)
         {
             // assumes first column is date and determines if row 
@@ -46,153 +37,68 @@ namespace WS.Accounts.Import
                 VatPayment = GetDecimalValue(rowData.Cells[22]);
                 Other = GetDecimalValue(rowData.Cells[23]);
             }
-            catch (InvalidOperationException){ }
-            catch (InvalidDataException) { }
-            catch (ArgumentOutOfRangeException) { }
+            catch (InvalidOperationException)
+            {
+            }
+            catch (InvalidDataException)
+            {
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+            }
         }
 
-        public DateTime Date
-        {
-            get;
-            private set;
-        }
+        public DateTime Date { get; private set; }
 
-        public string Reference
-        {
-            get;
-            private set;
-        }
+        public string Reference { get; private set; }
 
-        public string Details
-        {
-            get;
-            private set;
-        }
+        public string Details { get; private set; }
 
-        public decimal? CurrentAccount
-        {
-            get;
-            private set;
-        }
+        public decimal? CurrentAccount { get; private set; }
 
-        public decimal? SavingsAccount
-        {
-            get;
-            private set;
-        }
+        public decimal? SavingsAccount { get; private set; }
 
-        public decimal? CompanyCreditCard
-        {
-            get;
-            private set;
-        }
+        public decimal? CompanyCreditCard { get; private set; }
 
-        public decimal? PaidByOrToTheDirector
-        {
-            get;
-            private set;
-        }
+        public decimal? PaidByOrToTheDirector { get; private set; }
 
-        public decimal? VatWithin
-        {
-            get;
-            private set;
-        }
+        public decimal? VatWithin { get; private set; }
 
-        public decimal? SubcontractorCost
-        {
-            get;
-            private set;
-        }
+        public decimal? SubcontractorCost { get; private set; }
 
-        public decimal? Mileage
-        {
-            get;
-            private set;
-        }
+        public decimal? Mileage { get; private set; }
 
-        public decimal? OtherTravel
-        {
-            get;
-            private set;
-        }
+        public decimal? OtherTravel { get; private set; }
 
-        public decimal? EntertainingCost
-        {
-            get;
-            private set;
-        }
+        public decimal? EntertainingCost { get; private set; }
 
-        public decimal? TelephoneCharges
-        {
-            get;
-            private set;
-        }
+        public decimal? TelephoneCharges { get; private set; }
 
-        public decimal? OfficeExpenses
-        {
-            get;
-            private set;
-        }
+        public decimal? OfficeExpenses { get; private set; }
 
-        public decimal? BankCharges
-        {
-            get;
-            private set;
-        }
+        public decimal? BankCharges { get; private set; }
 
-        public decimal? Insurance
-        {
-            get;
-            private set;
-        }
+        public decimal? Insurance { get; private set; }
 
-        public decimal? ComputerExpenses
-        {
-            get;
-            private set;
-        }
+        public decimal? ComputerExpenses { get; private set; }
 
-        public decimal? SundryExpenses
-        {
-            get;
-            private set;
-        }
+        public decimal? SundryExpenses { get; private set; }
 
-        public decimal? AccountancyFees
-        {
-            get;
-            private set;
-        }
+        public decimal? AccountancyFees { get; private set; }
 
-        public decimal? Payroll
-        {
-            get;
-            private set;
-        }
+        public decimal? Payroll { get; private set; }
 
-        public decimal? CompanyPension
-        {
-            get;
-            private set;
-        }
+        public decimal? CompanyPension { get; private set; }
 
-        public decimal? Dividend
-        {
-            get;
-            private set;
-        }
+        public decimal? Dividend { get; private set; }
 
-        public decimal? VatPayment
-        {
-            get;
-            private set;
-        }
+        public decimal? VatPayment { get; private set; }
 
-        public decimal? Other
+        public decimal? Other { get; private set; }
+
+        public static IPaidRow Create(IRow data)
         {
-            get;
-            private set;
+            return new PaidRow(data);
         }
 
         private decimal? GetDecimalValue(ICell cell)

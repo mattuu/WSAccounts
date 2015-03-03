@@ -59,6 +59,10 @@
     <Compile Include="TransactionFactory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WS.Accounts.DataAccess\WS.Accounts.DataAccess.csproj">
+      <Project>{96D46020-AA1D-40A9-89B5-70C57A1B48E5}</Project>
+      <Name>WS.Accounts.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WS.Accounts.Entities\WS.Accounts.Entities.csproj">
       <Project>{ff0ea1c9-f43a-4de5-811e-298cfc97415d}</Project>
       <Name>WS.Accounts.Entities</Name>
